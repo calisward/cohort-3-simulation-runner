@@ -17,7 +17,7 @@ class SimulationTests {
     .get("  http://localhost:3000/users")
     .then()
     .assertThat()
-			.body("find { it.id == 1 }.name", equalTo("First"));
+			.body("find { it.id == 1 }.name", equalTo("UpdatedUser"));
 	}
 
 @Test
@@ -25,7 +25,7 @@ class SimulationTests {
 	given()
 			.when()
 
-			.delete("http://localhost:3000/users/{userId}", 2)
+			.delete("http://localhost:3000/users/{userId}", 3)
 			.then()
 			.assertThat()
 			.statusCode(200);
